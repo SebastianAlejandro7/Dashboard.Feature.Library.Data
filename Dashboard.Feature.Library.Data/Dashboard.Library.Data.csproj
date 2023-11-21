@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Repositories\NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dashboard.Feature.Library.Model\Dashboard.Library.Model.csproj" />
   </ItemGroup>
 

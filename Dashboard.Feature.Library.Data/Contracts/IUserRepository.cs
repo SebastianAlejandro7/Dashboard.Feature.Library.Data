@@ -2,7 +2,7 @@
 
 namespace Dashboard.Library.Data.Repositories
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {// Retorno NameMetodo (Parametro);
         User Create (User user);
 

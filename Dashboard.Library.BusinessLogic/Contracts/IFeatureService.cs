@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dashboard.Library.BusinessLogic.Contracts
 {
-    internal interface IFeatureService
+    public interface IFeatureService
     {
         List<Feature> GetFeaturesByUserId(Guid userId);
         void SetTaskAsCompleted(Guid taskId);

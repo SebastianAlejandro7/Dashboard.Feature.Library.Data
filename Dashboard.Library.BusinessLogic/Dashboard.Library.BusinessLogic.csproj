@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Services\FeatreService" />
+    <None Remove="Services\NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dashboard.Feature.Library.Data\Dashboard.Library.Data.csproj" />
   </ItemGroup>
 
