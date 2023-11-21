@@ -6,20 +6,25 @@ namespace Dashboard.Library.BusinessLogic.Services;
 
 public class FeatureService : IFeatureService
 {
-    public List<Feature> GetFeaturesByUserId(Guid userId)
+    private readonly IFeatureRepository _featureRepository;
+    private readonly IUserRepository _userRepository;
+
+	public FeatureService(IFeatureRepository featureRepository, IUserRepository userRepository)
+	{
+		_featureRepository = featureRepository;
+		_userRepository = userRepository;
+	}
+
+	public List<Feature> GetFeaturesByUserId(Guid userId)
     {
-        IFeatureRepository featureRepository = new InMemoryFeatureRepository();
-
-        IUserRepository userRepository;
-
-        User user = userRepository.Get(userId);
+        User user = _userRepository.Get(userId);
 
         if (user == null)
         {
             throw new ArgumentException("User does not exist!");
         }        
 
-        var features = featureRepository.Get();
+        var features = _featureRepository.Get();
 
         var featuresToReturn = new List<Feature>();
 
@@ -36,7 +41,7 @@ public class FeatureService : IFeatureService
 
     public void SetTaskAsCompleted(Guid taskId)
     {
-        throw new NotImplementedException();
+		throw new NotImplementedException();
     }
 
 

@@ -10,6 +10,7 @@ public class InMemoryFeatureRepository : IFeatureRepository
     {
         featuresDatabase = new Dictionary<Guid, Feature>();
     }
+
     //funcion, tiene que devolver
     public Feature Create(Feature feature)
     {
@@ -33,6 +34,7 @@ public class InMemoryFeatureRepository : IFeatureRepository
 
         return feature;
     }
+
     //procedimiento
     public void Update(Guid id, Feature feature)
     {
@@ -44,5 +46,10 @@ public class InMemoryFeatureRepository : IFeatureRepository
         {
             throw new KeyNotFoundException($"Feature with ID {id} not found");
         }
+    }
+
+    public static List<Feature> GetDictionary()
+    {
+        return featuresDatabase.Values.ToList();
     }
 }
